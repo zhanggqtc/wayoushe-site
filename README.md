@@ -7,6 +7,7 @@
 ## 在线访问
 
 - 周年庆活动页：<https://zhanggqtc.github.io/wayoushe-site/anniversary.html>
+- 返校集结活动页：<https://zhanggqtc.github.io/wayoushe-site/campus-assembly.html>
 - 开学季活动规则：<https://zhanggqtc.github.io/wayoushe-site/activity-rules.html>
 - 工蜂主仓（内网）：`markgqzhang/wayoushe-site`
 
