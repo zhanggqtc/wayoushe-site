@@ -9,12 +9,14 @@
 - 周年庆活动页：<https://zhanggqtc.github.io/wayoushe-site/anniversary.html>
 - 返校集结活动页：<https://zhanggqtc.github.io/wayoushe-site/campus-assembly.html>
 - 开学季活动规则：<https://zhanggqtc.github.io/wayoushe-site/activity-rules.html>
+- 2026全国大赛H2 报名工具：<https://zhanggqtc.github.io/wayoushe-site/h2-signup.html>
 - 工蜂主仓（内网）：`markgqzhang/wayoushe-site`
 
 ## 页面说明
 
 - `anniversary.html` — 周年庆活动页（加密）。
 - `activity-rules.html` — 开学季「活跃特权」活动资源使用规则图（加密），含临时活动版（1 个月）与长期赛季版（3 个月，类三角洲 3×3 安全箱）两套方案。
+- `h2-signup.html` — 2026全国大赛H2 报名工具（加密）。
 
 ## 安全说明
 
@@ -26,4 +28,4 @@
 ## 同步策略
 
 - 工蜂 `markgqzhang/wayoushe-site`：明文版，CVM 内网自动部署到 wayoushe.woa.com（仅腾讯内网账号可访问）。
-- GitHub `zhanggqtc/wayoushe-site`：加密版，含 `anniversary.html`、`activity-rules.html`。
+- GitHub `zhanggqtc/wayoushe-site`：加密版，含 `anniversary.html`、`activity-rules.html`、`h2-signup.html`。
