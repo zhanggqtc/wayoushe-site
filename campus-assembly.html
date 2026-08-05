@@ -406,18 +406,26 @@
     .modal { background: #eef0ec; box-shadow: 8px 8px 0 #1b1e1c; }
     .share-card { background: #343b36; box-shadow: inset 0 0 0 7px #cbd96a; }
 
-    /* A: a compact context switch attached to the mission board, not a separate mini-game. */
-    .moment-switch { display: grid; grid-template-columns: minmax(170px, .72fr) minmax(0, 1.28fr); gap: 28px; align-items: end; margin-top: 20px; padding: 18px 0 0; border-top: 1px solid rgba(27,30,28,.14); }
-    .moment-label { color: #697269; font-size: 10px; font-weight: 800; letter-spacing: .12em; }
-    .moment-copy h3 { margin: 7px 0 5px; color: #1b1e1c; font-size: 22px; letter-spacing: -.04em; }
-    .moment-copy p { max-width: 255px; margin: 0; color: #657066; font-size: 11px; font-weight: 600; line-height: 1.6; }
-    .moment-options { display: grid; grid-template-columns: repeat(3, 1fr); gap: 7px; }
-    .moment-option { min-height: 63px; padding: 9px 10px; text-align: left; color: #49534c; border: 1px solid transparent; background: #e7eae4; transition: background .18s ease, border-color .18s ease, transform .18s ease; }
-    .moment-option strong { display: block; color: #1b1e1c; font-size: 12px; }
-    .moment-option span { display: block; margin-top: 4px; font-size: 10px; font-weight: 600; line-height: 1.35; }
-    .moment-option:hover { border-color: rgba(27,30,28,.28); transform: translateY(-1px); }
-    .moment-option.selected { color: #3f493d; border-color: #aeba57; background: #dfe5c0; }
-    @media (max-width: 620px) { .moment-switch, .moment-options { grid-template-columns: 1fr; gap: 8px; } .moment-switch { gap: 13px; } .moment-copy p { max-width: none; } }
+    /* M03 返校祈愿亭：开学求签，温馨小互动。 */
+    .wish-garden { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr); gap: 26px; margin-top: 20px; padding: 18px 0 0; border-top: 1px solid rgba(27,30,28,.14); }
+    .wish-garden.fortune-only { grid-template-columns: minmax(210px, .72fr) minmax(0, 1.28fr); align-items: start; }
+    .wish-side { position: sticky; top: 54px; }
+    .wish-hints { display: grid; gap: 7px; margin: 4px 0 0; padding: 0; list-style: none; }
+    .wish-hints li { padding: 7px 10px; color: #6d5a45; border-left: 3px solid rgba(176,138,90,.5); background: rgba(251,243,228,.6); font-size: 10px; font-weight: 750; letter-spacing: .02em; }
+    .wish-label { color: #697269; font-size: 10px; font-weight: 800; letter-spacing: .12em; }
+    .wish-garden h3 { margin: 7px 0 5px; color: #1b1e1c; font-size: 22px; letter-spacing: -.04em; }
+    .wish-garden .wish-intro { max-width: 300px; margin: 0 0 13px; color: #657066; font-size: 11px; font-weight: 600; line-height: 1.6; }
+    .fortune-card { position: relative; padding: 18px 16px 15px; color: #4c3f33; border: 1px solid rgba(176,138,90,.4); background: linear-gradient(160deg, #fbf3e4 0%, #f6e7cf 100%); box-shadow: 5px 5px 0 rgba(176,138,90,.28); }
+    .fortune-card::before { content: ''; position: absolute; inset: 5px; border: 1px dashed rgba(176,138,90,.45); pointer-events: none; }
+    .fortune-tag { display: inline-block; padding: 4px 9px; color: #fbf3e4; background: #b04a3a; font-size: 11px; font-weight: 900; letter-spacing: .1em; }
+    .fortune-title { margin: 11px 0 6px; color: #7a4322; font-size: 19px; font-weight: 900; letter-spacing: .02em; }
+    .fortune-text { margin: 0; color: #6d5a45; font-size: 12.5px; font-weight: 600; line-height: 1.75; }
+    .fortune-luck { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 13px; }
+    .fortune-luck span { padding: 4px 8px; font-size: 10px; font-weight: 800; border: 1px solid rgba(176,138,90,.5); background: rgba(255,252,245,.7); }
+    .fortune-luck .yi { color: #5c7a3a; } .fortune-luck .ji { color: #a85340; }
+    .fortune-draw { margin-top: 14px; padding: 10px 15px; color: #fbf3e4; border: 0; background: #b04a3a; font-size: 12px; font-weight: 900; letter-spacing: .04em; transition: transform .15s ease, background .15s ease; }
+    .fortune-draw:hover { background: #9c3f31; transform: translateY(-1px); }
+    @media (max-width: 760px) { .wish-garden, .wish-garden.fortune-only { grid-template-columns: 1fr; gap: 18px; } .wish-garden .wish-intro { max-width: none; } }
 
     /* Campus identity flows. */
     .identity-grid-priority{grid-template-columns:1fr 1fr .55fr;align-items:stretch}.identity-grid-priority .identity-card{min-height:230px}.identity-grid-priority .pioneer{min-height:0;padding:16px}.identity-grid-priority .pioneer h3{margin:12px 0 7px;font-size:25px}.identity-grid-priority .pioneer p{font-size:11px}.identity-grid-priority .pioneer strong{margin-top:16px}
@@ -440,6 +448,11 @@
     .gift-art::after { content: 'WELCOME KIT'; position: absolute; right: -6px; bottom: 5px; color: rgba(27,30,28,.09); font: 900 26px/.8 var(--display); letter-spacing: -.07em; }
     .gift-box { position: relative; z-index: 1; display: grid; width: 108px; height: 58px; place-items: center; color: #eef0ec; border: 1px solid #1b1e1c; background: #343b36; box-shadow: 5px 5px 0 #1b1e1c; font: 900 12px/.9 var(--display); text-align: center; transform: rotate(-4deg); }
     .gift-box::before { content: 'V'; position: absolute; top: -18px; left: 40px; display: grid; width: 25px; height: 22px; place-items: center; color: #1b1e1c; border: 1px solid #1b1e1c; background: #cbd96a; font-size: 13px; }
+    .gift-stock { margin-top: 9px; padding: 9px 10px; border: 1px solid rgba(27,30,28,.14); background: #f5f6f2; }
+    .gift-stock-meta { display: flex; align-items: center; justify-content: space-between; gap: 8px; color: #59645b; font-size: 10px; font-weight: 900; }
+    .gift-stock-meta b { color: #1b1e1c; font-size: 12px; }
+    .gift-stock-bar { height: 5px; margin-top: 7px; overflow: hidden; background: #d5dbd0; }
+    .gift-stock-bar i { display: block; height: 100%; background: linear-gradient(90deg, #cbd96a, #8d9e3c); transition: width .35s ease; }
     .gift-showcase h4 { margin: 0; font-size: 19px; letter-spacing: -.045em; }
     .gift-showcase p { margin: 7px 0 0; color: #59645b; font-size: 11px; line-height: 1.55; }
     .gift-state { margin-top: 12px; padding-top: 10px; border-top: 1px solid rgba(27,30,28,.14); color: #536052; font-size: 11px; font-weight: 800; }
@@ -457,6 +470,39 @@
     @media(max-width:820px){.connect-layout{grid-template-columns:1fr}.gift-showcase{max-width:600px}.school-confirm-actions{align-items:stretch;flex-direction:column}.school-confirm-actions .workspace-cta{width:100%}}
     @media(max-width:540px){.address-row{grid-template-columns:1fr}}
 
+    /* 新生实名认证匹配：身份证号只在提交时使用，不进入页面状态。 */
+    .identity-verify-form { display: grid; gap: 12px; max-width: 600px; margin-top: 22px; padding: 16px; border: 1px solid rgba(27,30,28,.15); background: #e8ece4; }
+    .identity-verify-form label { display: grid; gap: 7px; color: #4e5a4f; font-size: 11px; font-weight: 900; }
+    .identity-verify-form input { width: 100%; padding: 12px; color: #1b1e1c; border: 1px solid rgba(27,30,28,.3); border-radius: 0; outline: 0; background: #fff; font: inherit; font-size: 15px; letter-spacing: .08em; }
+    .identity-verify-form input:focus { border-color: #82913c; box-shadow: 0 0 0 3px rgba(203,217,106,.46); }
+    .identity-privacy { padding: 11px 12px; color: #566156; border-left: 3px solid #9eae48; background: #f3f5ef; font-size: 11px; font-weight: 650; line-height: 1.65; }
+    .identity-privacy b { color: #1b1e1c; }
+    .identity-verify-form .workspace-cta { margin-top: 0; }
+
+    /* 老生邀请任务与 QB 抽奖 */
+    .qb-reward-panel { margin-top: 18px; padding: 15px; border: 1px solid rgba(27,30,28,.16); background: #e8ece4; }
+    .qb-reward-head { display: flex; justify-content: space-between; gap: 16px; align-items: end; }
+    .qb-reward-head h4 { margin: 5px 0 0; color: #1b1e1c; font-size: 19px; letter-spacing: -.04em; }
+    .qb-reward-head p { max-width: 425px; margin: 0; color: #59645a; font-size: 11px; line-height: 1.55; }
+    .qb-progress { margin-top: 11px; color: #536050; font-size: 11px; font-weight: 900; }
+    .qb-progress b { color: #1b1e1c; }
+    .qb-reward-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-top: 13px; }
+    .qb-reward-card { display: flex; min-height: 157px; flex-direction: column; padding: 12px; border: 1px solid rgba(27,30,28,.16); background: #f5f6f2; }
+    .qb-reward-card.available { border-color: #8d9e3c; background: #dfe5c0; }
+    .qb-reward-card.claimed { background: #d9e1d7; }
+    .qb-reward-card small { color: #69756b; font-size: 9px; font-weight: 900; letter-spacing: .07em; }
+    .qb-reward-card h5 { margin: 7px 0 4px; color: #1b1e1c; font-size: 15px; letter-spacing: -.03em; }
+    .qb-reward-card p { margin: 0; color: #5c665c; font-size: 10px; line-height: 1.5; }
+    .qb-reward-card strong { display: block; margin-top: auto; padding-top: 10px; color: #1b1e1c; font-size: 16px; }
+    .qb-reward-card button { width: 100%; margin-top: 10px; padding: 8px; color: #eef0ec; border: 0; background: #1b1e1c; font-size: 10px; font-weight: 900; }
+    .qb-reward-card button[disabled] { cursor: not-allowed; color: #687168; background: #c8cec4; }
+    .qb-delivery-note { margin-top: 12px; padding: 9px 10px; color: #596458; background: #f5f6f2; font-size: 10px; line-height: 1.55; }
+    .qb-delivery-note b { color: #1b1e1c; }
+    .qb-draw-form { display: grid; gap: 12px; }
+    .qb-draw-form label { display: grid; gap: 6px; color: #566157; font-size: 11px; font-weight: 900; }
+    .qb-draw-form input { width: 100%; padding: 11px; color: #1b1e1c; border: 1px solid rgba(27,30,28,.3); border-radius: 0; background: #fff; font: inherit; }
+    @media(max-width:820px){.qb-reward-grid{grid-template-columns:1fr}.qb-reward-card{min-height:0}.qb-reward-head{align-items:start;flex-direction:column}}
+
     /* 老生邀请任务与联系方式展示控制 */
     .contact-visibility { display: grid; grid-template-columns: 1fr auto; gap: 12px; align-items: center; margin-top: 18px; padding: 13px 14px; border: 1px solid rgba(27,30,28,.15); background: #e8ece4; }
     .contact-visibility h4 { margin: 0; font-size: 13px; }
@@ -471,6 +517,11 @@
     .invite-task span { color: #6b756b; font-size: 9px; font-weight: 900; letter-spacing: .08em; }
     .invite-task b { margin-top: 4px; color: #1b1e1c; font-size: 10px; line-height: 1.45; }
     .invite-task i { margin-top: 5px; color: #64705f; font-size: 9px; font-style: normal; font-weight: 900; }
+    .invite-progress { display: flex; align-items: center; justify-content: space-between; gap: 6px; margin-top: 8px; color: #52604d; font-size: 9px; font-weight: 900; }
+    .invite-progress::before { content: ''; flex: 1; height: 4px; background: #c4ccc0; }
+    .invite-progress.done::before { background: #93a63d; }
+    .invite-game-action { width: 100%; margin-top: 9px; padding: 7px; color: #eef0ec; border: 0; background: #2d372e; font-size: 9px; font-weight: 900; }
+    .invite-game-action[disabled] { color: #61705e; background: #c4ccc0; }
     .invite-debug-mark { margin-left: 7px; padding: 3px 5px; color: #44503d; background: #cbd96a; font-size: 9px; font-weight: 900; vertical-align: middle; }
     @media(max-width:540px){.contact-visibility{grid-template-columns:1fr}.contact-switch{width:100%}}
 
@@ -509,22 +560,38 @@ const ENABLE_PREVIEW_DEBUG = false; // 本地原型检查用；正式封装发�
 
 const state = {
   missions: [
-    { id: 'login', no: '01', label: '报到完成', title: '返校报到', detail: '登录游戏即可领取返校报到礼。', reward: '全新游戏道具', status: 'claimed' },
-    { id: 'match', no: '02', label: '正在进行', title: '开学第一局', detail: '完成 1 局任意模式对局，领取基础返场道具。', reward: '基础返场道具', status: 'active' },
-    { id: 'after-class', no: '03', label: '等待解锁', title: '课后开黑', detail: '累计完成 3 局对局，获得高价值返场奖励资格。', reward: '高价值返场资格', status: 'locked' }
+    { id: 'one-match', no: '01', label: '正在进行', title: '任务 1', detail: '活动期间完成 1 次任意对局。', reward: '英雄令牌 × 2', status: 'active' },
+    { id: 'three-days', no: '02', label: '等待解锁', title: '任务 2', detail: '活动期间累计 3 天进行对局。', reward: '掌瓦贴纸', status: 'locked' },
+    { id: 'five-days', no: '03', label: '等待解锁', title: '任务 3', detail: '活动期间累计 5 天进行对局。', reward: '四叶草 挂饰', status: 'locked' }
   ],
-  scene: 'early',
+  fortune: null,
   identity: null,
-  freshman: { view: 'age', ageVerified: false, schoolQuery: '', schoolDraft: null, school: null, privilegeActive: false, groupJoined: false, mentor: null, identityVerified: false, giftAddress: null, debugInvitePreview: false },
-  veteran: { view: 'cert', certified: false, profileComplete: false, profileSaved: false, phone: '', wechat: '', contactVisible: true, miniProgramBound: false, invites: Array(5).fill(null), activeInvite: 0 },
+  freshman: { view: 'age', newcomerVerified: false, schoolQuery: '', schoolDraft: null, school: null, privilegeActive: false, groupJoined: false, mentor: null, identityVerified: false, giftAddress: null, giftClaimed: false, debugInvitePreview: false },
+  giftStock: { total: 5000, remaining: 4862 },
+  veteran: {
+    view: 'cert', certified: false, profileComplete: false, profileSaved: false, phone: '', wechat: '', contactVisible: true, miniProgramBound: false,
+    loginChannel: 'qq', invites: Array(5).fill(null), activeInvite: 0,
+    qbRewards: [
+      { id: 'qb-1', threshold: 1, quota: '60,000', range: '2–5 QB', drawn: false, amount: null },
+      { id: 'qb-3', threshold: 3, quota: '30,000', range: '2–10 QB', drawn: false, amount: null },
+      { id: 'qb-5', threshold: 5, quota: '15,000', range: '2–20 QB', drawn: false, amount: null }
+    ]
+  },
   pioneer: { eligible: true }
 };
 
-const scenes = {
-  early: { label: '赶早八', note: '铃响了，开局刚好。', signal: '信号满格', fortune: '开黑运势 · SSR', detail: '早起的人先开第一局，今天的连胜从早八开始。' },
-  canteen: { label: '食堂占位', note: '队友快来，这局要开。', signal: '信号微抖', fortune: '开黑运势 · SR', detail: '占好座、点上菜，等队友上线这局就稳了。' },
-  track: { label: '操场晚风', note: '晚自习后，再打一局。', signal: '信号清亮', fortune: '开黑运势 · UR', detail: '熄灯前的最后一局，操场晚风里把今天收个尾。' }
-};
+const fortunes = [
+  { tag: '上上签', title: '开黑签', text: '新学期的第一局，必有老友应声而来。那些一起熬过的夜、一起守过的包，开学都会回来。', yi: '宜：叫上室友开黑', ji: '忌：深夜一个人单排' },
+  { tag: '大吉', title: '五杀签', text: '新学期的你状态拉满，考试、排位、社团三线开花，手感热得像刚出热身图。', yi: '宜：乘胜追击', ji: '忌：半场开香槟' },
+  { tag: '上签', title: '早八签', text: '今天的你会比闹钟先醒。第一排的位置和第一节课的好状态，都是你的。', yi: '宜：赶早八占前排', ji: '忌：踩点冲进教室' },
+  { tag: '上签', title: '及格签', text: '平时分就像守包，平时不站位，期末只能干着急。现在开始落位，还来得及。', yi: '宜：按时交作业', ji: '忌：期末突击拜佛' },
+  { tag: '中吉', title: '抢课签', text: '选课就像抢 A 大，手快有手慢无。系统开放那一瞬间，拼的就是反应和预瞄。', yi: '宜：提前收藏课表', ji: '忌：犹豫就会败北' },
+  { tag: '中吉', title: '饭搭子签', text: '食堂最后一个靠窗的座位，会留给愿意拼桌的人。新朋友的开场白，往往从一顿饭开始。', yi: '宜：约上饭搭子', ji: '忌：一个人点外卖' },
+  { tag: '小吉', title: '学长签', text: '在社团摊位前多停留一分钟，转角遇到的学长，可能就是你接下来的校友链接。', yi: '宜：主动打个招呼', ji: '忌：社恐突然发作' },
+  { tag: '小吉', title: '队友签', text: '总会遇到一个不报点的队友，也总会遇到一个愿意等你下课再开一局的人。', yi: '宜：珍惜好队友', ji: '忌：压力怪附体' },
+  { tag: '吉', title: '经济签', text: '这个月的生活费就像手枪局的经济——省着点起，下半场才有得打。', yi: '宜：理性消费', ji: '忌：月初梭哈全套皮肤' },
+  { tag: '末吉', title: '断线签', text: '偶尔掉线也没关系，重连回来照样能赢。生活卡顿的时候，深呼吸，再进场。', yi: '宜：稳住心态', ji: '忌：摔鼠标（赔不起）' }
+];
 
 const schools = [
   { id: 'szu', name: '深圳大学', city: '深圳', tags: '深圳 深大 szu shenzhen university' },
@@ -538,8 +605,10 @@ const stallEvents = [
   { school: '南方科技大学', detail: '9 月 6 日 · 12:00–18:00 · 荔园活动中心', status: '深圳同城' }
 ];
 
-// 先锋摆摊外部问卷地址（运营侧维护，可替换为正式问卷星/腾讯问卷链接）
-const STALL_SURVEY_URL = 'https://wj.qq.com/s2/WAYOUSHE_CAMPUS_STALL';
+// 先锋摆摊外部问卷地址（运营侧维护，占位待替换为正式问卷链接）
+// 白名单在活动开始前一次性提供；命中白名单跳问卷 A，未命中跳问卷 B。
+const STALL_SURVEY_URL_PIONEER = 'https://wj.qq.com/s2/WAYOUSHE_STALL_PIONEER_A';
+const STALL_SURVEY_URL_GENERAL = 'https://wj.qq.com/s2/WAYOUSHE_STALL_GENERAL_B';
 
 function missionStatus(mission) {
   if (mission.status === 'claimed') return '已领取';
@@ -574,9 +643,16 @@ function renderMissionBoard() {
   </section>`;
 }
 
+function renderFortuneCard() {
+  const fortune = state.fortune;
+  if (!fortune) {
+    return `<div class="fortune-card"><span class="fortune-tag">开学第一签</span><h4 class="fortune-title">今天，为新学期求一支签</h4><p class="fortune-text">返校的日子，讨个好彩头。抽一支开学签，看看新学期给你准备了什么。</p><button class="fortune-draw" data-action="draw-fortune">求一支开学签 →</button></div>`;
+  }
+  return `<div class="fortune-card"><span class="fortune-tag">${fortune.tag}</span><h4 class="fortune-title">${fortune.title}</h4><p class="fortune-text">${fortune.text}</p><div class="fortune-luck"><span class="yi">${fortune.yi}</span><span class="ji">${fortune.ji}</span></div><button class="fortune-draw" data-action="draw-fortune">再求一支 →</button></div>`;
+}
+
 function renderAtmosphere() {
-  const scene = scenes[state.scene];
-  return `<section class="moment-switch" aria-labelledby="moment-title"><div class="moment-copy"><span class="moment-label">校园信号台</span><h3 id="moment-title">此刻，校园正热闹</h3><p>挑一个你的返校时刻，看看此刻的校园信号。纯氛围互动，不影响任务与奖励。</p></div><div class="moment-options" aria-label="选择返校时刻">${Object.entries(scenes).map(([id, item]) => `<button class="moment-option ${id === state.scene ? 'selected' : ''}" data-action="scene" data-id="${id}"><strong>${item.label}</strong><span>${item.note}</span></button>`).join('')}</div><div class="moment-readout" data-scene="${state.scene}"><div class="signal-bars" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div><div class="readout-body"><b class="readout-signal">${scene.signal}</b><p class="readout-detail">${scene.detail}</p><span class="readout-fortune">${scene.fortune}</span></div><button class="text-button" data-action="scene-shuffle">摇一摇，随机一个返校时刻 →</button></div></section>`;
+  return `<section class="wish-garden fortune-only" aria-labelledby="wish-title"><div class="wish-side"><span class="wish-label">返校祈愿亭</span><h3 id="wish-title">开学求个签，讨个好彩头</h3><p class="wish-intro">十支开学签，签签有梗。抽一支看看新学期给你准备了什么——轻松一下的小互动，不影响任务进度与奖励。</p><ul class="wish-hints"><li>开黑签 · 五杀签 · 早八签</li><li>抢课签 · 及格签 · 经济签</li><li>饭搭子签 · 学长签 · 队友签 · 断线签</li></ul></div>${renderFortuneCard()}</section>`;
 }
 
 function renderCampusGateway() {
@@ -585,8 +661,8 @@ function renderCampusGateway() {
 
 function roleSummary() {
   return {
-    freshman: { label: 'Freshman', title: '我是新生', copy: '选学校、激活体验特权，再通过老生邀请建立同校帮扶。', stamp: 'FRESH', className: 'freshman' },
-    veteran: { label: 'Veteran', title: '我是老生', copy: '填写可选联系资料，发出 5 个独立邀请，带新生完成挑战。', stamp: 'VET', className: 'veteran' },
+    freshman: { label: 'Freshman', title: '我是新生', copy: '完成账号实名匹配、确认学校，再通过老生邀请建立同校帮扶。', stamp: 'FRESH', className: 'freshman' },
+    veteran: { label: 'Veteran', title: '我是老生', copy: '填写可选联系资料，发出 5 个独立邀请，与新生开黑解锁 QB 抽奖。', stamp: 'VET', className: 'veteran' },
     pioneer: { label: 'Pioneer', title: '先锋入口', copy: '发起校园摆摊意向。', stamp: 'GO!', className: 'pioneer' }
   };
 }
@@ -637,19 +713,27 @@ function getVisibleContact(value) {
 
 function renderGiftShowcase() {
   const freshman = state.freshman;
-  const addressSaved = Boolean(freshman.giftAddress);
+  const { total, remaining } = state.giftStock;
+  const soldOut = remaining <= 0;
+  const stockPercent = Math.max(0, Math.round((remaining / total) * 100));
   const eligible = getFreshmanConnection().identityVerified;
-  const status = !eligible
-    ? '<span>完成本校学长身份认证后开放</span>'
-    : addressSaved
-      ? '<b>收件地址已填写</b><span>发货前可随时修改</span>'
-      : '<b>已满足领取条件</b><span>可立即登记收件地址</span>';
-  const action = !eligible
-    ? '<button class="gift-cta" disabled>完成身份认证后领取</button>'
-    : addressSaved
-      ? '<button class="gift-edit" data-action="edit-gift-address">修改收件地址</button>'
-      : '<button class="gift-cta" data-action="claim-gift">领取开学大礼包 →</button>';
-  return `<aside class="gift-showcase"><div class="gift-kicker"><span>OFFICIAL MERCH · 2026</span><span class="gift-limit">限量发放</span></div><div class="gift-art" aria-label="实物周边开学大礼包展示"><div class="gift-box">BACK TO<br>CAMPUS</div></div><h4>实物周边开学大礼包</h4><p>完成身份认证后解锁，数量有限，领完即止。</p><div class="gift-state">${status}</div>${action}</aside>`;
+  const claimed = freshman.giftClaimed;
+  const status = claimed
+    ? '<b>已领取 · 收件地址已填写</b><span>发货前可随时修改</span>'
+    : !eligible
+      ? '<span>完成本校学长身份认证后开放</span>'
+      : soldOut
+        ? '<span>礼包已全部领完</span>'
+        : '<b>已满足领取条件</b><span>可立即登记收件地址</span>';
+  const action = claimed
+    ? '<button class="gift-edit" data-action="edit-gift-address">修改收件地址</button>'
+    : !eligible
+      ? '<button class="gift-cta" disabled>完成身份认证后领取</button>'
+      : soldOut
+        ? '<button class="gift-cta" disabled>已领完</button>'
+        : '<button class="gift-cta" data-action="claim-gift">领取开学大礼包 →</button>';
+  const stockLine = `<div class="gift-stock"><div class="gift-stock-meta"><span>限量 ${total.toLocaleString()} 份</span><b>剩余 ${remaining.toLocaleString()} 份</b></div><div class="gift-stock-bar"><i style="width:${stockPercent}%"></i></div></div>`;
+  return `<aside class="gift-showcase"><div class="gift-kicker"><span>OFFICIAL MERCH · 2026</span><span class="gift-limit">${soldOut ? '已领完' : '限量发放'}</span></div><div class="gift-art" aria-label="实物周边开学大礼包展示"><div class="gift-box">BACK TO<br>CAMPUS</div></div><h4>实物周边开学大礼包</h4>${stockLine}<p>完成身份认证后解锁，先领先得，提交地址即锁定 1 份库存。</p><div class="gift-state">${status}</div>${action}</aside>`;
 }
 
 function renderFreshmanWorkspace() {
@@ -657,20 +741,22 @@ function renderFreshmanWorkspace() {
   const selectedSchool = freshman.school || schools[0];
   const draftSchool = freshman.schoolDraft;
   const steps = [
-    ['age', '01', '新生资格', '16–22 岁年龄校验', freshman.ageVerified ? 'done' : 'pending'],
+    ['age', '01', '新生验证', freshman.newcomerVerified ? '账号实名匹配已完成' : '输入身份证号完成账号实名匹配', freshman.newcomerVerified ? 'done' : 'pending'],
     ['school', '02', '选择学校', freshman.school ? `${selectedSchool.name} · 已确认` : '搜索、确认所属学校', freshman.school ? 'done' : 'pending'],
     ['connect', '03', '校友连接', freshman.identityVerified ? '本校学长已完成身份确认' : '通过校友链接完成身份认证', freshman.identityVerified ? 'done' : 'pending']
   ];
   let content = '';
   if (freshman.view === 'age') {
-    content = `<div class="workspace-kicker">FRESHMAN / STEP 01</div><h3>先确认你的新生资格</h3><p class="workspace-lead">年龄校验只用于激活新生路径。通过后即可选择所属学校，开启高校体验特权。</p><div class="eligibility-card"><b>新生年龄范围</b><strong>16–22 岁</strong><span>未通过也不影响参与返校任务</span></div><button class="workspace-cta" data-action="verify-age">验证新生年龄资格 <em>→</em></button>`;
+    content = freshman.newcomerVerified
+      ? `<div class="workspace-kicker">FRESHMAN / STEP 01</div><h3>新生验证已完成</h3><p class="workspace-lead">账号实名匹配已通过。真实姓名与身份证号仅用于本次匹配，页面不会记录或存储。</p><div class="eligibility-card"><b>匹配结果</b><strong>新生资格已确认</strong><span>下一步请选择并确认所属学校</span></div><button class="workspace-cta" data-action="freshman-view" data-id="school">去选择学校 <em>→</em></button>`
+      : `<div class="workspace-kicker">FRESHMAN / STEP 01</div><h3>确认你的新生资格</h3><p class="workspace-lead">请输入真实姓名与身份证号，与当前账号实名信息进行匹配，完成新生资格验证后再选择学校。</p><form id="newcomer-verify-form" class="identity-verify-form"><label>真实姓名<input name="realName" autocomplete="off" maxlength="30" placeholder="请输入与账号实名一致的姓名" aria-describedby="id-card-privacy" required></label><label>身份证号<input name="idCard" inputmode="text" autocomplete="off" maxlength="18" placeholder="请输入 18 位身份证号" aria-describedby="id-card-privacy" required></label><p class="identity-privacy" id="id-card-privacy"><b>仅用于本次实名匹配。</b>真实姓名与身份证号不会在本页面记录、展示或存储；验证完成后会立即从页面内存清除。</p><button class="workspace-cta" type="submit">提交并验证新生资格 <em>→</em></button></form>`;
   }
   if (freshman.view === 'school') {
     const confirmation = draftSchool ? `<div class="school-confirm-card"><b>已选择：${draftSchool.name}</b><p>学校一经提交将无法修改，请确认无误。后续需通过本校认证学长完成身份确认；认证通过后，即可领取限量实物周边开学大礼包。</p><div class="school-confirm-actions"><button class="workspace-cta compact" data-action="confirm-school">确认提交学校 <em>→</em></button><button class="text-action" data-action="clear-school-draft">重新选择</button></div></div>` : '';
     content = `<div class="workspace-kicker">FRESHMAN / STEP 02</div><h3>输入你的学校</h3><p class="workspace-lead">支持学校名称、城市和拼音缩写模糊搜索。选择学校后，请再次确认提交。</p><label class="school-search"><span>学校搜索</span><input id="school-search-input" value="${escapeHTML(freshman.schoolQuery)}" oninput="updateSchoolQuery(this.value)" autocomplete="off" placeholder="例如：深圳大学、深圳、szu" /><i>⌕</i></label><div class="school-results" id="school-results">${renderSchoolResults()}</div>${confirmation}`;
   }
   if (freshman.view === 'connect') {
-    const { mentor, identityVerified, previewingInvite } = getFreshmanConnection();
+    const { mentor, previewingInvite } = getFreshmanConnection();
     const phone = getVisibleContact(state.veteran.phone);
     const wechat = getVisibleContact(state.veteran.wechat);
     const connection = mentor
@@ -681,9 +767,33 @@ function renderFreshmanWorkspace() {
   return `<section class="workspace-panel freshman-workspace"><aside>${renderWorkspaceNav(steps, freshman.view, 'freshman-view')}</aside><div class="workspace-body">${content}</div></section>`;
 }
 
+function completedInviteCount() {
+  return state.veteran.invites.filter((student) => student?.gameCompleted).length;
+}
+
+function renderQbRewardPanel() {
+  const veteran = state.veteran;
+  const completed = completedInviteCount();
+  const delivery = veteran.loginChannel === 'qq'
+    ? '当前为 QQ 登录：抽中的 QB 将直接发放至当前 QQ 账号。'
+    : '当前为微信登录：抽奖前需填写用于接收 QB 的 QQ 号。';
+  const cards = veteran.qbRewards.map((reward) => {
+    const available = completed >= reward.threshold;
+    const status = reward.drawn ? 'claimed' : available ? 'available' : 'locked';
+    const action = reward.drawn
+      ? `<button disabled>已抽中 ${reward.amount} QB</button>`
+      : available
+        ? `<button data-action="draw-qb" data-id="${reward.id}">进行 QB 抽奖 →</button>`
+        : `<button disabled>还差 ${reward.threshold - completed} 名完成开黑</button>`;
+    return `<article class="qb-reward-card ${status}"><small>${reward.quota} 份抽奖机会</small><h5>与 ${reward.threshold} 名新生开黑</h5><p>每名新生完成 1 局普通 / 竞技模式后计入进度。</p><strong>随机 ${reward.range}</strong>${action}</article>`;
+  }).join('');
+  return `<section class="qb-reward-panel"><div class="qb-reward-head"><div><span class="workspace-kicker">QB MILESTONE DRAW</span><h4>开黑里程碑 QB 抽奖</h4></div><p>分别与 1 / 3 / 5 名受邀新生完成 1 局开黑，即可各获得 1 次抽奖机会。</p></div><div class="qb-progress">已完成开黑：<b>${completed} / 5</b> 名新生</div><div class="qb-reward-grid">${cards}</div><div class="qb-delivery-note"><b>发放说明：</b>${delivery}</div></section>`;
+}
+
 function renderInviteSlot(slot, index) {
   if (slot) {
-    return `<article class="invite-slot bound"><div class="slot-top"><span>邀请位 ${String(index + 1).padStart(2, '0')}</span><b>已绑定</b></div><div class="bound-student"><i>${slot.name.slice(0, 1)}</i><div><strong>${slot.name}</strong><small>${slot.school} · 新生</small></div></div><div class="invite-task"><span>该玩家的后续任务</span><b>与 ${slot.name} 同队完成 1 局普通 / 竞技模式</b><i>${slot.gameCompleted ? '已完成' : '待完成'}</i></div></article>`;
+    const progress = slot.gameCompleted ? '1 / 1 · 已完成' : '0 / 1 · 待完成';
+    return `<article class="invite-slot bound"><div class="slot-top"><span>邀请位 ${String(index + 1).padStart(2, '0')}</span><b>已绑定</b></div><div class="bound-student"><i>${slot.name.slice(0, 1)}</i><div><strong>${slot.name}</strong><small>${slot.school} · 新生</small></div></div><div class="invite-task"><span>该玩家的后续任务</span><b>与 ${slot.name} 同队完成 1 局普通 / 竞技模式</b><div class="invite-progress ${slot.gameCompleted ? 'done' : ''}"><span>开黑进度</span><i>${progress}</i></div><button class="invite-game-action" data-action="complete-invite-game" data-id="${index}" ${slot.gameCompleted ? 'disabled' : ''}>${slot.gameCompleted ? '已登记本局完成' : '登记本局开黑完成'}</button></div></article>`;
   }
   return `<article class="invite-slot"><div class="slot-top"><span>邀请位 ${String(index + 1).padStart(2, '0')}</span><b>可分享</b></div><div class="slot-qr">${renderQr(`邀请链接 ${index + 1} 二维码`)}</div><p>仅限 1 名有效新生通过此链接回访并绑定。</p><div class="slot-actions"><button data-action="copy-invite" data-id="${index}">复制链接</button><button data-action="show-invite-qr" data-id="${index}">查看二维码</button></div></article>`;
 }
@@ -712,7 +822,7 @@ function renderVeteranWorkspace() {
     content = `<div class="workspace-kicker">VETERAN / STEP 02</div><h3>留下可选的联系资料</h3><p class="workspace-lead">填写后，只有通过你专属邀请链接绑定的新生能看到；进入第三步后可随时一键关闭展示，避免被打扰。</p><div class="profile-form"><label>手机号 <input id="veteran-phone" value="${escapeHTML(veteran.phone)}" placeholder="选填，如 138****0000" /></label><label>微信号 <input id="veteran-wechat" value="${escapeHTML(veteran.wechat)}" placeholder="选填，如 yunye_szu" /></label></div><div class="privacy-note">联系方式不会出现在公开页面、群聊列表或未绑定的新生页面中。</div>${renderMiniProgramConnect()}<div class="workspace-actions"><button class="secondary-action" data-action="skip-profile">跳过，暂不填写</button><button class="workspace-cta compact" data-action="save-profile">保存并生成邀请位 <em>→</em></button></div>`;
   }
   if (veteran.view === 'invites') {
-    content = `<div class="workspace-kicker">VETERAN / STEP 03</div><h3>你的 5 个新生邀请位</h3><p class="workspace-lead">校友链接是你与一名新生之间的专属 1 对 1 通道。新生绑定后，每个邀请位直接展示对应的后续开黑任务：同队完成 1 局普通或竞技模式。</p>${renderContactVisibility(veteran)}<div class="invite-stage"><div class="invite-grid">${veteran.invites.map(renderInviteSlot).join('')}</div>${renderMiniProgramConnect(true)}</div>`;
+    content = `<div class="workspace-kicker">VETERAN / STEP 03</div><h3>你的 5 个新生邀请位</h3><p class="workspace-lead">校友链接是你与一名新生之间的专属 1 对 1 通道。新生绑定后，每个邀请位直接展示一次普通 / 竞技开黑进度；完成 1、3、5 名新生的开黑，还可分别获得 QB 抽奖机会。</p>${renderContactVisibility(veteran)}<div class="invite-stage"><div class="invite-grid">${veteran.invites.map(renderInviteSlot).join('')}</div>${renderMiniProgramConnect(true)}</div>${renderQbRewardPanel()}`;
   }
   return `<section class="workspace-panel veteran-workspace"><aside>${renderWorkspaceNav(steps, veteran.view, 'veteran-view')}</aside><div class="workspace-body">${content}</div></section>`;
 }
@@ -720,9 +830,9 @@ function renderVeteranWorkspace() {
 function renderPioneerPanel() {
   const eligible = state.pioneer.eligible;
   if (!eligible) {
-    return `<section class="pioneer-panel"><div><span class="workspace-kicker">PIONEER ENTRY</span><h3>先锋摆摊</h3><p>摆摊申请面向高校先锋：城市核心高校社团负责人，或已认证且历史活跃度达标的老玩家。非先锋玩家可查看招募说明并联系运营。</p></div><button class="workspace-cta" data-action="show-stall-rules">查看招募说明 <em>→</em></button></section>`;
+    return `<section class="pioneer-panel"><div><span class="workspace-kicker">PIONEER ENTRY</span><h3>先锋摆摊</h3><p>先锋资格按白名单识别（活动开始前一次性提供）。你当前不在白名单内，可填写问卷登记意向，运营评估后联系。</p></div><button class="workspace-cta" data-action="goto-stall-survey">填写意向问卷 <em>→</em></button></section>`;
   }
-  return `<section class="pioneer-panel"><div><span class="workspace-kicker">PIONEER ENTRY</span><h3>先锋摆摊</h3><p>你是已认证的高校先锋，可直接提交摆摊意向。点击下方按钮，二次确认资格后前往外部问卷填写落地信息。</p></div><button class="workspace-cta" data-action="apply-stall">申请摆摊 <em>→</em></button></section>`;
+  return `<section class="pioneer-panel"><div><span class="workspace-kicker">PIONEER ENTRY</span><h3>先锋摆摊</h3><p>先锋资格按白名单识别（活动开始前一次性提供）。你已在白名单内，点击直接前往问卷提交摆摊申请。</p></div><button class="workspace-cta" data-action="goto-stall-survey">申请摆摊 <em>→</em></button></section>`;
 }
 
 function renderRolePanel() {
@@ -745,7 +855,9 @@ function renderPreviewDebugToolbar() {
   const inviteAction = state.freshman.debugInvitePreview ? '切换至邀请前' : '切换至邀请成功';
   const veteranLabel = state.veteran.certified ? '老生：已认证' : '老生：未认证';
   const veteranAction = state.veteran.certified ? '切换老生未认证' : '切换老生已认证';
-  return `<aside class="preview-debug-toolbar" aria-label="内部预览工具"><span><b>内部预览工具</b> · 不属于正式活动功能 · ${inviteLabel} · ${veteranLabel}</span><button data-action="toggle-invite-debug">${inviteAction}</button><button data-action="toggle-veteran-certification-preview">${veteranAction}</button></aside>`;
+  const channelLabel = state.veteran.loginChannel === 'qq' ? '账号：QQ 登录' : '账号：微信登录';
+  const pioneerLabel = state.pioneer.eligible ? '先锋：白名单内' : '先锋：非白名单';
+  return `<aside class="preview-debug-toolbar" aria-label="内部预览工具"><span><b>内部预览工具</b> · 不属于正式活动功能 · ${inviteLabel} · ${veteranLabel} · ${channelLabel} · ${pioneerLabel}</span><button data-action="toggle-invite-debug">${inviteAction}</button><button data-action="toggle-veteran-certification-preview">${veteranAction}</button><button data-action="toggle-login-channel-preview">切换 QQ / 微信</button><button data-action="seed-qb-milestone-preview">预览 5 名开黑完成</button><button data-action="toggle-pioneer-whitelist-preview">切换先锋白名单</button></aside>`;
 }
 
 function render() {
@@ -775,6 +887,16 @@ function completeMission(id) {
   if (next) next.status = 'active';
   render();
   showToast(next ? `「${mission.title}」已完成，下一档任务已解锁。` : '返校任务已全部完成，奖励资格已登记。');
+}
+
+function drawFortune() {
+  let next = fortunes[Math.floor(Math.random() * fortunes.length)];
+  if (state.fortune && fortunes.length > 1) {
+    while (next.title === state.fortune.title) next = fortunes[Math.floor(Math.random() * fortunes.length)];
+  }
+  state.fortune = next;
+  render();
+  showToast(`求到「${next.tag} · ${next.title}」，新学期好彩头！`);
 }
 
 function updateSchoolQuery(value) {
@@ -812,14 +934,18 @@ function confirmSchool() {
 
 function bindFromInviteLink() {
   const veteran = state.veteran;
+  if (!state.freshman.newcomerVerified || !state.freshman.school) {
+    showToast('请先完成新生实名匹配并确认所属学校。');
+    return;
+  }
   if (!veteran.certified || !veteran.profileComplete) {
     showToast('演示流程：请先在“我是老生”完成认证、个人资料和邀请位步骤。');
     return;
   }
   const openIndex = veteran.invites.findIndex((item) => !item);
   if (openIndex < 0) return showToast('该老生的 5 个邀请位均已绑定。');
-  const school = state.freshman.school || schools[0];
-  const student = { name: '林乔', school: school.name, progress: '0 / 1', gameCompleted: false };
+  const school = state.freshman.school;
+  const student = { name: '林乔', school: school.name, gameCompleted: false };
   veteran.invites[openIndex] = student;
   veteran.activeInvite = openIndex;
   state.freshman.mentor = { name: '云野', gameId: 'Yunye#SZU', inviteIndex: openIndex };
@@ -828,11 +954,22 @@ function bindFromInviteLink() {
   showToast(`邀请链接验证成功：${school.name}认证老生已完成身份确认，礼包领取已解锁。`);
 }
 
-function verifyAge() {
-  state.freshman.ageVerified = true;
+function verifyNewcomerId(form) {
+  const realName = form.elements.realName.value.trim();
+  const idCard = form.elements.idCard.value.trim().toUpperCase();
+  if (!/^[\u4e00-\u9fa5·]{2,30}$/.test(realName)) {
+    showToast('请输入与账号实名一致的真实姓名。');
+    return;
+  }
+  if (!/^\d{17}[\dX]$/.test(idCard)) {
+    showToast('请输入有效的 18 位身份证号后再提交。');
+    return;
+  }
+  form.reset();
+  state.freshman.newcomerVerified = true;
   state.freshman.view = 'school';
   render();
-  showToast('年龄资格验证通过，请搜索并选择你的学校。');
+  showToast('账号实名匹配已通过，真实姓名与身份证号均未记录或存储。');
 }
 
 function joinGroup() {
@@ -854,6 +991,30 @@ function toggleVeteranCertificationPreview() {
   showToast(state.veteran.certified ? '已切换为老生已认证预览态。' : '已切换为老生未认证预览态。');
 }
 
+function toggleLoginChannelPreview() {
+  state.veteran.loginChannel = state.veteran.loginChannel === 'qq' ? 'wechat' : 'qq';
+  render();
+  showToast(`已切换为 ${state.veteran.loginChannel === 'qq' ? 'QQ' : '微信'}登录预览态。`);
+}
+
+function seedQbMilestonePreview() {
+  const names = ['林乔', '许闻', '陈星', '周野', '沈遥'];
+  state.veteran.invites = names.map((name, index) => ({ name, school: '深圳大学', gameCompleted: true, inviteIndex: index }));
+  state.veteran.certified = true;
+  state.veteran.profileComplete = true;
+  state.veteran.view = 'invites';
+  state.identity = 'veteran';
+  render();
+  showToast('已生成 5 名新生完成开黑的内部预览态。');
+}
+
+function togglePioneerWhitelistPreview() {
+  state.pioneer.eligible = !state.pioneer.eligible;
+  state.identity = 'pioneer';
+  render();
+  showToast(state.pioneer.eligible ? '已切换为先锋白名单内预览态（跳问卷 A）。' : '已切换为非白名单预览态（跳问卷 B）。');
+}
+
 function continueVeteran() {
   if (!state.veteran.certified) return verifyVeteran();
   state.veteran.view = 'profile';
@@ -865,6 +1026,60 @@ function bindMiniProgram() {
   state.veteran.miniProgramBound = true;
   render();
   showToast('已完成小程序绑定，并加入深圳大学瓦友群。');
+}
+
+function completeInviteGame(index) {
+  const student = state.veteran.invites[Number(index)];
+  if (!student || student.gameCompleted) return;
+  student.gameCompleted = true;
+  render();
+  showToast(`已登记与 ${student.name} 的 1 局开黑，QB 抽奖资格将按完成新生数解锁。`);
+}
+
+function getQbReward(id) {
+  return state.veteran.qbRewards.find((reward) => reward.id === id);
+}
+
+function qbAmountFor(reward) {
+  const roll = Math.random() * 100;
+  if (reward.threshold === 1) return roll < 93 ? 2 : roll < 99 ? 3 : 5;
+  if (reward.threshold === 3) return roll < 82 ? 2 : roll < 97 ? 5 : 10;
+  return roll < 70 ? 2 : roll < 95 ? 10 : 20;
+}
+
+function openQbDraw(id) {
+  const reward = getQbReward(id);
+  if (!reward || reward.drawn) return;
+  if (completedInviteCount() < reward.threshold) {
+    showToast(`还需完成 ${reward.threshold - completedInviteCount()} 名新生的开黑任务。`);
+    return;
+  }
+  const title = `与 ${reward.threshold} 名新生开黑 · QB 抽奖`;
+  const delivery = state.veteran.loginChannel === 'qq'
+    ? `<p>当前为 QQ 登录，抽中的 QB 将直接发放至当前 QQ 账号。</p><button class="modal-cta" data-action="confirm-qb-draw" data-id="${reward.id}">确认抽奖 →</button>`
+    : `<form id="qb-receiver-form" class="modal-copy qb-draw-form" data-reward-id="${reward.id}"><p>当前为微信登录。请填写用于接收 QB 的 QQ 号，号码仅用于本次奖励发放。</p><label>接收 QB 的 QQ 号<input name="receiverQQ" inputmode="numeric" autocomplete="off" maxlength="12" placeholder="请输入 QQ 号" required></label><button class="modal-cta" type="submit">确认并抽奖 →</button></form>`;
+  openModal(`<div class="modal-copy"><h3>${title}</h3><p>本档随机获得 ${reward.range}，共 ${reward.quota} 份抽奖机会，发完即止。</p>${delivery}</div>`);
+}
+
+function confirmQbDraw(id) {
+  const reward = getQbReward(id);
+  if (!reward || reward.drawn) return;
+  reward.amount = qbAmountFor(reward);
+  reward.drawn = true;
+  closeModal();
+  render();
+  showToast(`恭喜抽中 ${reward.amount} QB，奖励已进入发放流程。`);
+}
+
+function saveQbReceiver(form) {
+  const receiverQQ = form.elements.receiverQQ.value.trim();
+  if (!/^[1-9]\d{4,11}$/.test(receiverQQ)) {
+    showToast('请输入有效的 QQ 号。');
+    return;
+  }
+  const id = form.dataset.rewardId;
+  form.reset();
+  confirmQbDraw(id);
 }
 
 function toggleContactVisibility() {
@@ -904,25 +1119,30 @@ function copyInvite(index) {
 }
 
 function showInviteQr(index) {
-  openModal(`<div class="invite-qr-modal"><span class="workspace-kicker">INVITE ${String(Number(index) + 1).padStart(2, '0')}</span><h3>新生邀请二维码</h3><p>新生扫码后需确认年龄、选择学校，并通过本链接重新访问页面才会绑定成功。</p>${renderQr('新生邀请二维码')}</div>`);
-}
-
-function openStallConfirm() {
-  openModal(`<div class="modal-copy"><h3>确认摆摊申请</h3><p><b>谁能申请：</b>仅限高校先锋，即城市核心高校社团负责人，或已认证且历史活跃度达标的老玩家。</p><p><b>申请能获得什么：</b>官方支持包，含线下物料（展架 / 海报 / 桌搭 / 互动小礼）、活动与游戏内曝光、执行 SOP 与培训，以及先锋与协助玩家的游戏道具和限定权益。</p><p>摆摊申请<b>无名额限制</b>，确认后将跳转到外部问卷填写落地信息。</p><button class="modal-cta" data-action="goto-stall-survey">前往填写问卷 →</button></div>`);
+  openModal(`<div class="invite-qr-modal"><span class="workspace-kicker">INVITE ${String(Number(index) + 1).padStart(2, '0')}</span><h3>新生邀请二维码</h3><p>新生扫码后需完成账号实名匹配、确认学校，并通过本链接重新访问页面才会绑定成功。</p>${renderQr('新生邀请二维码')}</div>`);
 }
 
 function gotoStallSurvey() {
-  closeModal();
-  window.open(STALL_SURVEY_URL, '_blank', 'noopener');
-  showToast('正在打开摆摊申请问卷…');
+  const eligible = state.pioneer.eligible;
+  const url = eligible ? STALL_SURVEY_URL_PIONEER : STALL_SURVEY_URL_GENERAL;
+  window.open(url, '_blank', 'noopener');
+  showToast(eligible ? '白名单校验通过，正在打开先锋摆摊申请问卷…' : '正在打开摆摊意向登记问卷…');
 }
 function openGiftAddressForm() {
+  const freshman = state.freshman;
   if (!getFreshmanConnection().identityVerified) {
     showToast('完成本校学长身份认证后，才可领取限量开学大礼包。');
     return;
   }
-  const address = state.freshman.giftAddress || {};
-  openModal(`<form id="gift-address-form" class="modal-copy address-form"><h3>${address.fullAddress ? '修改收件地址' : '领取开学大礼包'}</h3><p>礼包限量发放，请填写可稳定收件的地址。信息仅用于本次礼包寄送。</p><div class="address-row"><label>收件人<input name="recipient" maxlength="30" value="${escapeHTML(address.recipient || '')}" required></label><label>手机号码<input name="phone" inputmode="tel" pattern="[0-9+ -]{6,20}" maxlength="20" value="${escapeHTML(address.phone || '')}" required></label></div><label>详细收件地址<textarea name="fullAddress" maxlength="160" placeholder="省 / 市 / 区 / 街道 / 门牌号" required>${escapeHTML(address.fullAddress || '')}</textarea></label><p class="address-tip">填写后会显示「地址已填写」状态，发货前仍可返回本页修改编辑。</p><button class="modal-cta" type="submit">${address.fullAddress ? '保存修改' : '确认领取并保存地址'} →</button></form>`);
+  if (!freshman.giftClaimed && state.giftStock.remaining <= 0) {
+    showToast('礼包已全部领完，感谢参与。');
+    return;
+  }
+  const address = freshman.giftAddress || {};
+  const stockNote = freshman.giftClaimed
+    ? '你已锁定 1 份礼包库存，可随时修改收件地址，发货前以最后一次保存为准。'
+    : `当前剩余 ${state.giftStock.remaining.toLocaleString()} / ${state.giftStock.total.toLocaleString()} 份。提交即锁定 1 份库存，领取后不可取消，但可随时修改地址。`;
+  openModal(`<form id="gift-address-form" class="modal-copy address-form"><h3>${address.fullAddress ? '修改收件地址' : '领取开学大礼包'}</h3><p>礼包限量发放，请填写可稳定收件的地址。信息仅用于本次礼包寄送。</p><div class="address-row"><label>收件人<input name="recipient" maxlength="30" value="${escapeHTML(address.recipient || '')}" required></label><label>手机号码<input name="phone" inputmode="tel" pattern="[0-9+ -]{6,20}" maxlength="20" value="${escapeHTML(address.phone || '')}" required></label></div><label>详细收件地址<textarea name="fullAddress" maxlength="160" placeholder="省 / 市 / 区 / 街道 / 门牌号" required>${escapeHTML(address.fullAddress || '')}</textarea></label><p class="address-tip">${stockNote}</p><button class="modal-cta" type="submit">${address.fullAddress ? '保存修改' : '确认领取并保存地址'} →</button></form>`);
 }
 
 function saveGiftAddress(form) {
@@ -930,16 +1150,30 @@ function saveGiftAddress(form) {
   const phone = form.elements.phone.value.trim();
   const fullAddress = form.elements.fullAddress.value.trim();
   if (!recipient || !phone || !fullAddress) return;
+  const firstClaim = !state.freshman.giftClaimed;
+  if (firstClaim) {
+    state.giftStock.remaining = Math.max(0, state.giftStock.remaining - 1);
+    state.freshman.giftClaimed = true;
+  }
   state.freshman.giftAddress = { recipient, phone, fullAddress };
   closeModal();
   render();
-  showToast('收件地址已填写，可随时返回修改编辑。');
+  showToast(firstClaim ? '领取成功，已锁定 1 份礼包库存，可随时返回修改地址。' : '收件地址已更新，可随时返回修改编辑。');
 }
 
 function handleFormSubmit(event) {
-  if (event.target.id !== 'gift-address-form') return;
-  event.preventDefault();
-  saveGiftAddress(event.target);
+  if (event.target.id === 'newcomer-verify-form') {
+    event.preventDefault();
+    verifyNewcomerId(event.target);
+  }
+  if (event.target.id === 'gift-address-form') {
+    event.preventDefault();
+    saveGiftAddress(event.target);
+  }
+  if (event.target.id === 'qb-receiver-form') {
+    event.preventDefault();
+    saveQbReceiver(event.target);
+  }
 }
 function showStallRules() { openModal(`<div class="modal-copy"><h3>校园摆摊规则</h3><p>仅高校先锋可申请。先提交意向，官方入围或联络后再补充场地、人员、物料、玩法与风险预案。确认活动优先展示给本校玩家，本校暂无时展示同城活动。</p></div>`); }
 function showCupRules() { openModal(`<div class="modal-copy"><h3>新生杯</h3><p>个人随机组队，以所属学校出战。新生拥有独立新生榜与核心奖励；老生可参赛但不参与新生榜。详细赛制将在独立赛事规则页公布。</p></div>`); }
@@ -949,18 +1183,29 @@ function handleAction(event) {
   if (!target) return;
   const { action, id } = target.dataset;
   if (action === 'mission') completeMission(id);
-  if (action === 'scene') { state.scene = id; render(); }
+  if (action === 'draw-fortune') drawFortune();
   if (action === 'goto-campus') document.querySelector('#campus-zone').scrollIntoView({ behavior: 'smooth' });
   if (action === 'identity') { state.identity = id; render(); window.setTimeout(() => document.querySelector('.workspace-panel, .pioneer-panel')?.scrollIntoView({ behavior: 'smooth', block: 'center' }), 0); }
-  if (action === 'freshman-view') { state.freshman.view = id; render(); }
+  if (action === 'freshman-view') {
+    if (id !== 'age' && !state.freshman.newcomerVerified) {
+      showToast('请先输入身份证号完成账号实名匹配。');
+      return;
+    }
+    state.freshman.view = id;
+    render();
+  }
   if (action === 'veteran-view') { state.veteran.view = id; render(); }
-  if (action === 'verify-age') verifyAge();
   if (action === 'pick-school') pickSchool(id);
   if (action === 'confirm-school') confirmSchool();
   if (action === 'clear-school-draft') clearSchoolDraft();
   if (action === 'join-group') joinGroup();
   if (action === 'simulate-invite') bindFromInviteLink();
   if (action === 'toggle-invite-debug') toggleInviteDebug();
+  if (action === 'toggle-login-channel-preview') toggleLoginChannelPreview();
+  if (action === 'seed-qb-milestone-preview') seedQbMilestonePreview();
+  if (action === 'complete-invite-game') completeInviteGame(id);
+  if (action === 'draw-qb') openQbDraw(id);
+  if (action === 'confirm-qb-draw') confirmQbDraw(id);
   if (action === 'claim-gift' || action === 'edit-gift-address') openGiftAddressForm();
   if (action === 'verify-veteran') verifyVeteran();
   if (action === 'continue-veteran') continueVeteran();
@@ -971,9 +1216,9 @@ function handleAction(event) {
   if (action === 'skip-profile') saveProfile(true);
   if (action === 'copy-invite') copyInvite(id);
   if (action === 'show-invite-qr') showInviteQr(id);
-  if (action === 'apply-stall') openStallConfirm();
   if (action === 'goto-stall-survey') gotoStallSurvey();
   if (action === 'show-stall-details') showStallRules();
+  if (action === 'toggle-pioneer-whitelist-preview') togglePioneerWhitelistPreview();
   if (action === 'cup-rules') showCupRules();
   if (action === 'close-modal') closeModal();
 }
@@ -987,18 +1232,6 @@ document.addEventListener('submit', handleFormSubmit);
   const el = document.createElement('style');
   el.id = 'campus-extra-styles';
   el.textContent = `
-    .moment-readout { grid-column: 1 / -1; display: flex; flex-wrap: wrap; align-items: center; gap: 16px 20px; margin-top: 4px; padding: 16px 18px; color: var(--ink); border: 1px solid rgba(27,30,28,.16); background: #e7eae4; }
-    .signal-bars { display: flex; align-items: flex-end; gap: 4px; height: 40px; }
-    .signal-bars i { width: 6px; height: 100%; background: #cbd96a; transform-origin: bottom; animation: signalPulse 1s ease-in-out infinite; }
-    .signal-bars i:nth-child(2) { animation-delay: .12s } .signal-bars i:nth-child(3) { animation-delay: .24s } .signal-bars i:nth-child(4) { animation-delay: .36s } .signal-bars i:nth-child(5) { animation-delay: .48s }
-    @keyframes signalPulse { 0%, 100% { transform: scaleY(.34) } 50% { transform: scaleY(1) } }
-    .moment-readout .readout-body { flex: 1 1 230px; }
-    .readout-signal { display: block; font-size: 15px; font-weight: 900; letter-spacing: -.01em; }
-    .readout-detail { max-width: 48ch; margin: 5px 0 0; color: #5d665f; font-size: 12px; line-height: 1.62; }
-    .readout-fortune { display: inline-block; margin-top: 9px; padding: 5px 9px; color: #1b1e1c; background: #cbd96a; font-size: 10px; font-weight: 900; letter-spacing: .04em; }
-    .moment-readout .text-button { color: #46503e; margin-left: auto; }
-    @media (max-width: 620px) { .moment-readout { grid-column: auto; } .moment-readout .text-button { margin-left: 0; } }
-    @media (prefers-reduced-motion: reduce) { .signal-bars i { animation: none; transform: scaleY(.7); } }
     .modal-cta { display: inline-block; margin-top: 14px; padding: 12px 16px; color: #cbd96a; background: #1b1e1c; border: 0; font-size: 13px; font-weight: 900; letter-spacing: .02em; }
     .modal-cta:hover { background: #2b302d; }
   `;
