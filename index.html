@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#1b1e1c" />
+  <title>瓦友社 · 高校社区看板</title>
+  <style>
+    :root {
+      --acid: #cbd96a;
+      --acid-deep: #adb951;
+      --mint: #dfe4da;
+      --violet: #7a8279;
+      --ink: #1b1e1c;
+      --ink-soft: #2b302d;
+      --paper: #eef0ec;
+      --line: rgba(27, 30, 28, .14);
+      --shadow: 0 18px 46px rgba(27, 30, 28, .12);
+      --display: "PingFang SC", "Microsoft YaHei", "Arial Black", sans-serif;
+      --body: "PingFang SC", "Microsoft YaHei", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--body); line-height: 1.6; }
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; cursor: pointer; }
+    button:focus-visible, a:focus-visible { outline: 3px solid var(--violet); outline-offset: 3px; }
+
+    .shell { width: min(1180px, calc(100% - 40px)); margin: 0 auto; }
+    .eyebrow { display: inline-flex; align-items: center; gap: 8px; font-size: 10px; font-weight: 900; letter-spacing: .2em; text-transform: uppercase; }
+    .eyebrow::before { content: ""; width: 8px; height: 8px; background: currentColor; transform: rotate(45deg); }
+
+    /* topbar */
+    .topbar { height: 52px; background: var(--ink); color: #fff; border-bottom: 4px solid var(--acid); position: sticky; top: 0; z-index: 50; }
+    .topbar-inner { height: 100%; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+    .brand { display: flex; align-items: center; gap: 11px; font-size: 13px; font-weight: 900; letter-spacing: .04em; }
+    .brand-mark { display: grid; width: 24px; height: 24px; place-items: center; color: var(--ink); background: var(--acid); font-size: 13px; font-weight: 900; transform: rotate(-5deg); }
+    .top-nav { display: flex; align-items: center; gap: 18px; font-size: 11px; font-weight: 700; color: #c9cdc4; }
+    .top-nav a:hover { color: var(--acid); }
+
+    /* hero */
+    .hero { position: relative; isolation: isolate; background: var(--acid); border-bottom: 1px solid var(--ink); overflow: hidden; }
+    .hero::before { content: ""; position: absolute; inset: 0; z-index: -1; background:
+      linear-gradient(115deg, transparent 0 18%, rgba(255,255,255,.6) 18.1% 32%, transparent 32.1% 52%, rgba(173,185,81,.85) 52.1% 65%, transparent 65.1%),
+      repeating-linear-gradient(115deg, transparent 0 56px, rgba(27,30,28,.92) 57px 75px, transparent 76px 121px);
+      opacity: .82; }
+    .hero::after { content: "返校集结"; position: absolute; z-index: -1; right: -12px; bottom: -34px; font: 900 clamp(85px, 15vw, 210px)/.8 var(--display); letter-spacing: -.08em; color: rgba(255,255,255,.66); white-space: nowrap; }
+    .hero-inner { position: relative; min-height: 320px; display: flex; flex-direction: column; justify-content: center; padding: 56px 0 64px; }
+    .hero .eyebrow { color: var(--ink); }
+    .hero h1 { margin: 14px 0 0; font: 900 clamp(40px, 6.4vw, 84px)/.82 var(--display); letter-spacing: -.06em; max-width: 14ch; }
+    .hero p { max-width: 46ch; margin: 16px 0 0; color: #2c3326; font-size: 15px; font-weight: 600; }
+    .hero-cta { display: inline-flex; align-items: center; gap: 10px; width: fit-content; margin-top: 26px; padding: 15px 22px; color: var(--ink); background: #fff; border: 0; font-size: 14px; font-weight: 900; letter-spacing: .02em; box-shadow: 6px 6px 0 var(--ink); transition: transform .16s ease, box-shadow .16s ease; }
+    .hero-cta:hover { transform: translate(-2px, -2px); box-shadow: 8px 8px 0 var(--ink); }
+    .hero-cta:active { transform: translate(2px, 2px); box-shadow: 3px 3px 0 var(--ink); }
+    .hero-sticker { position: absolute; right: 4px; top: 30px; display: grid; width: 104px; height: 104px; place-items: center; text-align: center; background: var(--ink); color: #fff; border: 3px solid #fff; border-radius: 50%; box-shadow: 5px 5px 0 rgba(27,30,28,.5); font: 900 17px/.9 var(--display); letter-spacing: -.02em; transform: rotate(9deg); }
+    .hero-sticker small { display: block; margin-top: 3px; font: 900 8px var(--body); letter-spacing: .12em; color: var(--acid); }
+
+    /* hub */
+    .hub { padding: 60px 0 72px; }
+    .hub-head { display: flex; align-items: end; justify-content: space-between; gap: 24px; margin-bottom: 26px; }
+    .hub-head h2 { margin: 6px 0 0; font: 900 clamp(28px, 4vw, 46px)/.92 var(--display); letter-spacing: -.05em; }
+    .hub-head p { max-width: 320px; margin: 0; color: #56534b; font-size: 13px; }
+
+    .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .card { position: relative; display: flex; flex-direction: column; min-height: 210px; padding: 20px; border: 1px solid var(--ink); background: #fff; overflow: hidden; transition: transform .18s ease, box-shadow .18s ease; }
+    .card:hover { transform: translate(-2px, -2px); box-shadow: 6px 6px 0 var(--ink); }
+    .card::after { content: attr(data-wm); position: absolute; right: -4px; bottom: -26px; color: rgba(27,30,28,.05); font: 900 116px/.8 var(--display); letter-spacing: -.06em; pointer-events: none; }
+    .card .kicker { font-size: 10px; font-weight: 900; letter-spacing: .16em; text-transform: uppercase; color: #6b6f63; }
+    .card h3 { position: relative; z-index: 1; margin: 10px 0 8px; font: 900 clamp(20px, 2.4vw, 28px)/.92 var(--display); letter-spacing: -.03em; }
+    .card p { position: relative; z-index: 1; margin: 0; max-width: 34ch; color: #4c5046; font-size: 12.5px; }
+    .card .tag { position: relative; z-index: 1; width: fit-content; margin-top: 12px; padding: 4px 8px; font-size: 9px; font-weight: 900; letter-spacing: .1em; border: 1px solid var(--ink); color: var(--ink); }
+    .card .tag.lock { color: #fff; background: var(--ink); border-color: var(--ink); }
+    .card .go { position: relative; z-index: 1; margin-top: auto; padding-top: 14px; font-size: 12.5px; font-weight: 900; color: var(--ink-soft); }
+    .card .go span { color: var(--acid-deep); }
+
+    .card.feature { grid-column: span 2; background: var(--ink); color: #fff; box-shadow: 8px 8px 0 var(--acid-deep); }
+    .card.feature::after { color: rgba(203,217,106,.1); content: "集结"; right: -10px; bottom: -40px; font-size: 150px; }
+    .card.feature .kicker { color: var(--acid); }
+    .card.feature h3 { color: #fff; }
+    .card.feature p { color: #c9cdc4; }
+    .card.feature .go { color: var(--acid); }
+    .card.feature .go span { color: #fff; }
+
+    /* footer */
+    footer { background: var(--ink); color: #c9cdc4; padding: 30px 0 34px; border-top: 4px solid var(--acid); }
+    .foot-inner { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 14px; font-size: 12px; }
+    .foot-inner .brand { color: #fff; }
+    .foot-note { color: #8a8f83; }
+
+    /* reveal */
+    .reveal { opacity: 0; transform: translateY(18px); transition: opacity .6s ease, transform .6s ease; }
+    .reveal.in { opacity: 1; transform: none; }
+
+    @media (max-width: 720px) {
+      .grid { grid-template-columns: 1fr; }
+      .card.feature { grid-column: auto; }
+      .hero-sticker { display: none; }
+      .hub-head { flex-direction: column; align-items: start; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .reveal { opacity: 1; transform: none; transition: none; }
+      .hero-cta, .card { transition: none; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="shell topbar-inner">
+      <div class="brand"><span class="brand-mark">瓦</span> 瓦友社 WAYOUSHE</div>
+      <nav class="top-nav">
+        <a href="#hub">活动导航</a>
+        <a href="campus-assembly.html">返校集结</a>
+        <a href="https://wayoushe.woa.com">内网入口</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="shell hero-inner">
+        <span class="eyebrow">VALORANT 高校社区</span>
+        <h1>高校集结，开学就开黑</h1>
+        <p>新生报到、老生带队、先锋摆摊。一个页面串起返校季的全部玩法，奖励不限量，先玩先拿。</p>
+        <a class="hero-cta" href="campus-assembly.html">进入返校集结活动 <span>→</span></a>
+        <div class="hero-sticker">2026<small>秋 · 返校季</small></div>
+      </div>
+    </section>
+
+    <section class="hub" id="hub">
+      <div class="shell">
+        <div class="hub-head reveal">
+          <div>
+            <span class="eyebrow" style="color:var(--acid-deep)">活动导航</span>
+            <h2>瓦友社正在跑的活动</h2>
+          </div>
+          <p>返校集结已开放，其余活动页为内部分享，凭密码进入。</p>
+        </div>
+
+        <div class="grid">
+          <a class="card feature reveal" data-wm="集结" href="campus-assembly.html">
+            <span class="kicker">主推 · 公开</span>
+            <h3>返校集结</h3>
+            <p>新生 / 老生 / 先锋三条线，选校、邀请绑定、校友链接、摆摊申请一站完成。奖励不限量。</p>
+            <span class="go">进入活动 <span>→</span></span>
+          </a>
+
+          <a class="card reveal" data-wm="庆" href="anniversary.html">
+            <span class="kicker">周年庆</span>
+            <h3>周年庆活动页</h3>
+            <p>瓦友社周年庆典的专属活动与权益入口。</p>
+            <span class="tag lock">密码进入</span>
+            <span class="go">凭密码进入 <span>→</span></span>
+          </a>
+
+          <a class="card reveal" data-wm="则" href="activity-rules.html">
+            <span class="kicker">规则</span>
+            <h3>开学季活动规则</h3>
+            <p>活跃特权资源使用规则，含临时版与长期赛季版。</p>
+            <span class="tag lock">密码进入</span>
+            <span class="go">凭密码进入 <span>→</span></span>
+          </a>
+
+          <a class="card reveal" data-wm="赛" href="h2-signup.html">
+            <span class="kicker">报名</span>
+            <h3>2026 全国大赛 H2 报名</h3>
+            <p>下半年全国大赛的玩家报名与组队工具。</p>
+            <span class="tag lock">密码进入</span>
+            <span class="go">凭密码进入 <span>→</span></span>
+          </a>
+
+          <a class="card reveal" data-wm="军" href="champions-player-entry.html">
+            <span class="kicker">冠军</span>
+            <h3>冠军玩家报名</h3>
+            <p>冠军玩家专属报名与认证通道。</p>
+            <span class="tag lock">密码进入</span>
+            <span class="go">凭密码进入 <span>→</span></span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="shell foot-inner">
+      <div class="brand"><span class="brand-mark">瓦</span> 瓦友社 WAYOUSHE</div>
+      <span class="foot-note">VALORANT 高校社区 · 返校集结进行中</span>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var items = document.querySelectorAll('.reveal');
+      if (!('IntersectionObserver' in window) || window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        items.forEach(function (el) { el.classList.add('in'); });
+        return;
+      }
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+        });
+      }, { threshold: 0.18 });
+      items.forEach(function (el) { io.observe(el); });
+    })();
+  </script>
+</body>
+</html>
