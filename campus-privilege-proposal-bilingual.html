@@ -80,7 +80,7 @@
   </header>
 
   <!-- Background -->
-  <h2><span class="zh">背景 · 为什么要做自选池</span><span class="en">Background · Why the Self-Selection Pool</span></h2>
+  <h2><span class="zh">背景：为什么要做自选池</span><span class="en">Background: Why we're doing the self-selection pool</span></h2>
   <div class="concl lg" style="border-color:var(--ink);background:#f4f5f9;margin-bottom:6px">
     <span class="zh">现在高校特权每个月给 3 款皮肤限时体验，但款是系统定死的，喜不喜欢都得体验。这次改：数量还是 3 款，但让玩家自己挑想要的——这样大家愿意多上线，流失的也愿意回来。唯一要小心的：拿来限时体验的这些皮肤，别把正常花钱买的生意抢了。</span>
     <span class="en">Today Campus Privilege gives 3 skins a month as a time-limited trial, but which 3 are fixed by the system — like it or not, you try them. This revamp: <b>same number of skins, but players pick which ones</b>, so college players log in more and come back more. One thing to watch: trialing these skins must not hurt paid sales.</span>
@@ -91,11 +91,11 @@
     <b><span class="zh">一句话结论：</span><span class="en">One-line conclusion: </span></b><span class="zh">简单说：原来是系统每月硬塞 3 款；现在给一个 12 款皮肤的"自选货架"，每天随机亮 3 款给你挑，看中先锁住，平时做点活跃任务，这 3 款就能在当月限时体验。一个月还是能体验 3 款，没多没少。</span><span class="en">In short: instead of the system force-giving 3 time-limited trials a month, we now offer a 12-skin "pick shelf" — 3 random skins show up daily for you to choose, lock the ones you like, do some activity tasks, and those 3 open up for a time-limited trial that month. Still 3 skins to experience a month, no more no less.</span>
   </div>
   <div class="concl warn lg" style="margin-bottom:18px">
-    <b><span class="zh">关键边界（看方案先读这条）：</span><span class="en">Key boundary (read first): </span></b><span class="zh">一句话说清边界：能拿来限时体验的，都是本来就卖不动的老皮肤；那些抢手的高级皮，照常原价卖，不进自选池，一分钱生意都不受影响。</span><span class="en">Boundary in one line: only skins that already sell poorly get the time-limited trial; the popular premium skins keep selling at full price and stay out of the pool, so not a cent of that business is touched.</span>
+    <b><span class="zh">关键边界（先看这条）：</span><span class="en">Key boundary (read first): </span></b><span class="zh">一句话说清边界：能拿来限时体验的，都是本来就卖不动的老皮肤；那些抢手的高级皮，照常原价卖，不进自选池，一分钱生意都不受影响。</span><span class="en">Boundary in one line: only skins that already sell poorly get the time-limited trial; the popular premium skins keep selling at full price and stay out of the pool, so not a cent of that business is touched.</span>
   </div>
 
   <!-- 1. Mechanism -->
-  <h2><span class="zh">一、新流程示意</span><span class="en">I. New Flow Overview</span></h2>
+  <h2><span class="zh">一、新流程怎么走</span><span class="en">I. How the new flow works</span></h2>
   <div class="flow">
     <div class="step"><b><span class="zh">① 每月建池</span><span class="en">① Build pool monthly</span></b><span class="zh">官方配置 N 款 2~3 年前经典皮肤入自选池</span><span class="en">Ops configures N classic skins from 2–3 years ago into the self-selection pool</span></div>
     <div class="arrow">→</div>
@@ -108,20 +108,20 @@
   <p style="font-size:12px;color:var(--sub);margin-top:8px"><span class="zh"><b>体验量不变（仍 3 款体验/人/月）</b>，「给什么体验」从系统定死 → 玩家自选；新增「每日看池」与「锁定做任务」两个活跃钩子。</span><span class="en"><b>Trial volume unchanged (still 3 skins/user/month)</b>; WHAT is trialed shifts from system-fixed → player-chosen. Two new engagement hooks: daily pool check + post-lock tasks.</span></p>
 
   <!-- 2. Pool size -->
-  <h2><span class="zh">二、自选池规模（建议 <span class="kpi-num">12 款</span>）</span><span class="en">II. Pool Size (recommended <span class="kpi-num">12</span>)</span></h2>
+  <h2><span class="zh">二、池子放多少款（建议 <span class="kpi-num">12 款</span>）</span><span class="en">II. How many skins in the pool (recommended <span class="kpi-num">12</span>)</span></h2>
   <div class="grid g3">
     <div class="card">
-      <h3><span class="zh">下限 10：随机性才有意义</span><span class="en">Lower bound 10: Randomness only matters</span></h3>
+      <h3><span class="zh">下限 10：太少就没随机感了</span><span class="en">Lower bound 10: too few and "random" feels fake</span></h3>
       <div class="big">C(10,3)=120</div>
       <div class="note"><span class="zh">组合数 ≥120，30 天不重样；低于 10 款"随机"流于形式</span><span class="en">≥120 combinations, no repeat in 30 days; below 10, "random" is nominal</span></div>
     </div>
     <div class="card">
-      <h3><span class="zh">推荐 12：曝光与选择成本平衡</span><span class="en">Recommended 12: Balanced exposure & cost</span></h3>
+      <h3><span class="zh">推荐 12：曝光和挑拣都刚好</span><span class="en">Recommended 12: good exposure, manageable choice</span></h3>
       <div class="big">25%</div>
       <div class="note"><span class="zh">单款日曝光 25%、月均 ~7.5 次，月中大概率遇心仪款 2+ 次</span><span class="en">25% daily exposure, ~7.5/month; favorites met 2+ times mid-month</span></div>
     </div>
     <div class="card">
-      <h3><span class="zh">上限 15：超过则体验衰减</span><span class="en">Upper bound 15: Diminishing beyond</span></h3>
+      <h3><span class="zh">上限 15：再多就挑花眼了</span><span class="en">Upper bound 15: more just means choice fatigue</span></h3>
       <div class="big">&lt;20%</div>
       <div class="note"><span class="zh">日曝光 &lt;20% 易刷不到心仪款；老冷皮供给本身有限</span><span class="en">&lt;20% daily exposure frustrates; legacy-skin supply is limited</span></div>
     </div>
@@ -131,7 +131,7 @@
   </div>
 
   <!-- 3. Value contribution -->
-  <h2><span class="zh">三、关于特权对商业化影响的分析思路</span><span class="en">III. How to Think About Privilege's Impact on Monetization</span></h2>
+  <h2><span class="zh">三、这套特权会不会影响赚钱</span><span class="en">III. Will this perk hurt our revenue</span></h2>
   <div class="concl muted">
     <b><span class="zh">特权吸引力会更强：</span><span class="en">Appeal gets stronger: </span></b><span class="zh">数量不变，但"自选"把"塞给你啥你用啥"变成"自己挑中的"，满意的人预计从 ~30% 涨到 80%+（先用研预估）。</span><span class="en">Same amount, but "self-select" turns "use what you're given" into "pick what you want", lifting satisfaction from ~30% to 80%+ (research estimate).</span>
   </div>
@@ -144,7 +144,7 @@
 
   <!-- 3b. Data support: se/de share is low -->
   <div class="concl" style="margin-top:16px;border-color:var(--green);background:var(--green-soft)">
-    <b><span class="zh">数据证明：这些老皮本来就卖不动</span><span class="en">The data shows: these legacy skins barely sell anyway</span></b>
+    <b><span class="zh">数据证明：这些老皮本来就没人买</span><span class="en">The data shows: these legacy skins barely sell anyway</span></b>
     <div class="grid g2" style="margin-top:10px">
       <div>
         <span class="zh">在正规商店里，最便宜那档老皮（单价 1000 以下）只贡献了全部消费的 <b>0.31%</b>——基本等于没人买。它们基本只能靠"夜市打折"清库存。而夜市一天也就卖出 11.6 亿 VP，只占大盘的 <b>16% 左右</b>（还只是一天的峰值，平时更低）；这 16% 里又有 <b>八成</b>是这种老皮。所以把这些卖不动的老皮从商店里拿出来、放进自选池限时体验，对整体的生意几乎没影响。</span>
@@ -164,20 +164,20 @@
   </div>
 
   <!-- 4. Survey deployment & conclusions -->
-  <h2><span class="zh">四、当前特权玩家对皮肤自选的反馈（N=98 · 2026-08-05）</span><span class="en">IV. Current Privilege Players' Feedback on Skin Self-Selection (N=98 · 2026-08-05)</span></h2>
+  <h2><span class="zh">四、玩家怎么看皮肤自选（N=98 · 2026-08-05）</span><span class="en">IV. What players think of skin self-selection (N=98 · 2026-08-05)</span></h2>
   <div class="concl good" style="border-color:var(--green);background:var(--green-soft)">
-    <b><span class="zh">调研说明：</span><span class="en">About the survey: </span></b><span class="zh">8 月初我们问了 <b>98</b> 个高校特权玩家。一句话：已经开通的人特别希望皮肤换得勤一点，愿意为了新皮多上线、多做任务；但有个前提——给的皮肤得是热门的好皮，不然他们照样不满意。</span><span class="en">In early Aug we asked <b>98</b> Campus Privilege players. In one line: those already using it really want skins to rotate more often, and will log in / do tasks for new ones — but only if the skins are popular and good; otherwise they stay unhappy.</span>
+    <b><span class="zh">调研说了啥：</span><span class="en">What the survey says: </span></b><span class="zh">8 月初我们问了 <b>98</b> 个高校特权玩家。一句话：已经开通的人特别希望皮肤换得勤一点，愿意为了新皮多上线、多做任务；但有个前提——给的皮肤得是热门的好皮，不然他们照样不满意。</span><span class="en">In early Aug we asked <b>98</b> Campus Privilege players. In one line: those already using it really want skins to rotate more often, and will log in / do tasks for new ones — but only if the skins are popular and good; otherwise they stay unhappy.</span>
   </div>
   <div class="grid g2">
     <div>
-      <div class="concl"><b><span class="zh">① 轮换获强支持：</span><span class="en">① Rotation strongly backed: </span></b><span class="zh">问"每天换款会不会让你更常打开"，平均 <b>8.24 分</b>（满分 10）；问"愿不愿意为了新皮做任务"，<b>7.49 分</b>。打分 8 分以上的分别占 <b>71.5% 和 60.3%</b>——绝大多数人都支持。</span><span class="en">Asked "does daily rotation make you open the app more", avg <b>8.24/10</b>; asked "would you do tasks for new skins", <b>7.49/10</b>. Those scoring 8+ were <b>71.5% and 60.3%</b> — clear majority in favor.</span></div>
-      <div class="concl warn"><b><span class="zh">② 内容要升级：</span><span class="en">② Content must level up: </span></b><span class="zh">近九成（<b>89.8%</b>）的人要热门枪型、要带特效的皮，嫌普通贴图皮丑；而现在的满意度只有 <b>6.4 分</b>（满分 10），明显不够好。</span><span class="en">Nearly 9 in 10 (<b>89.8%</b>) want popular guns and effect skins, and call plain sticker skins ugly; yet current satisfaction is only <b>6.4/10</b> — clearly not good enough.</span></div>
+      <div class="concl"><b><span class="zh">① 大家都想要勤换款：</span><span class="en">① Everyone wants more rotation: </span></b><span class="zh">问"每天换款会不会让你更常打开"，平均 <b>8.24 分</b>（满分 10）；问"愿不愿意为了新皮做任务"，<b>7.49 分</b>。打分 8 分以上的分别占 <b>71.5% 和 60.3%</b>——绝大多数人都支持。</span><span class="en">Asked "does daily rotation make you open the app more", avg <b>8.24/10</b>; asked "would you do tasks for new skins", <b>7.49/10</b>. Those scoring 8+ were <b>71.5% and 60.3%</b> — clear majority in favor.</span></div>
+      <div class="concl warn"><b><span class="zh">② 皮肤得够好：</span><span class="en">② Skins need to be good: </span></b><span class="zh">近九成（<b>89.8%</b>）的人要热门枪型、要带特效的皮，嫌普通贴图皮丑；而现在的满意度只有 <b>6.4 分</b>（满分 10），明显不够好。</span><span class="en">Nearly 9 in 10 (<b>89.8%</b>) want popular guns and effect skins, and call plain sticker skins ugly; yet current satisfaction is only <b>6.4/10</b> — clearly not good enough.</span></div>
     </div>
     <div>
-      <div class="concl warn"><b><span class="zh">③ 入池范围要重估（关键）：</span><span class="en">③ Pool scope to re-check (key): </span></b><span class="zh">矛盾点在这：玩家想要"热门 + 特效皮"，但我们原先想只放卖不动的老皮。到底放哪些，得让数据再核一遍才能定。</span><span class="en">Here's the tension: players want "popular + effect skins", but we originally planned to only put in dead legacy skins. What actually goes in must be re-checked against the data before we decide.</span></div>
-      <div class="concl"><b><span class="zh">④ 样本偏存量：</span><span class="en">④ Sample skews existing: </span></b><span class="zh">但这批人 <b>94.9%</b> 都已经开通特权了，没开通的只有 5 个——所以这套问卷证明不了"能不能拉新"，得再找没开通的人问问。</span><span class="en">But <b>94.9%</b> of these people already have the perk; only 5 haven't. So this survey can't prove "acquisition effect" — we need to ask people who haven't activated it yet.</span></div>
+      <div class="concl warn"><b><span class="zh">③ 放哪些皮得再想想（关键）：</span><span class="en">③ What goes in needs a rethink (key): </span></b><span class="zh">矛盾点在这：玩家想要"热门 + 特效皮"，但我们原先想只放卖不动的老皮。到底放哪些，得让数据再核一遍才能定。</span><span class="en">Here's the tension: players want "popular + effect skins", but we originally planned to only put in dead legacy skins. What actually goes in must be re-checked against the data before we decide.</span></div>
+      <div class="concl"><b><span class="zh">④ 受访的人大多已开通：</span><span class="en">④ Most respondents already activated: </span></b><span class="zh">但这批人 <b>94.9%</b> 都已经开通特权了，没开通的只有 5 个——所以这套问卷证明不了"能不能拉新"，得再找没开通的人问问。</span><span class="en">But <b>94.9%</b> of these people already have the perk; only 5 haven't. So this survey can't prove "acquisition effect" — we need to ask people who haven't activated it yet.</span></div>
       <div class="card">
-        <h3><span class="zh">样本基座</span><span class="en">Sample baseline</span></h3>
+        <h3><span class="zh">受访者情况</span><span class="en">Respondents at a glance</span></h3>
         <table>
           <tr><td><span class="zh">有效样本</span><span class="en">Valid samples</span></td><td><b>98 份</b></td></tr>
           <tr><td><span class="zh">已开通占比</span><span class="en">Activated share</span></td><td><b>94.9%</b></td></tr>
@@ -188,33 +188,33 @@
     </div>
   </div>
   <div class="concl" style="margin-top:12px">
-    <b><span class="zh">与方案的关系：</span><span class="en">Relation to proposal: </span></b><span class="zh">调研确认了"换得勤 → 大家更活跃"这条路是对的；但它也把入池标准从"老冷皮"推到了"热门枪型 + 特效皮"。具体放哪些，先用数据算清"限时体验会少赚多少"，再定清单。详细看《高校特权问卷调研报告》。</span><span class="en">The survey confirms "rotate more → players more active" is right; but it also pushes the pool criteria from "dead legacy skins" to "popular guns + effect skins". Before finalizing the list, first use data to work out "how much the time-limited trials cost us in sales". See the Campus Privilege Survey Report.</span>
+    <b><span class="zh">跟方案啥关系：</span><span class="en">How this ties to the proposal: </span></b><span class="zh">调研确认了"换得勤 → 大家更活跃"这条路是对的；但它也把入池标准从"老冷皮"推到了"热门枪型 + 特效皮"。具体放哪些，先用数据算清"限时体验会少赚多少"，再定清单。详细看《高校特权问卷调研报告》。</span><span class="en">The survey confirms "rotate more → players more active" is right; but it also pushes the pool criteria from "dead legacy skins" to "popular guns + effect skins". Before finalizing the list, first use data to work out "how much the time-limited trials cost us in sales". See the Campus Privilege Survey Report.</span>
   </div>
 
   <!-- 5. Post-launch refinement plan -->
-  <h2><span class="zh">五、正式上线后的完善计划</span><span class="en">V. Post-launch Refinement Plan</span></h2>
+  <h2><span class="zh">五、上线后怎么接着打磨</span><span class="en">V. How we'll keep refining after launch</span></h2>
   <div class="concl"><b><span class="zh">目标：</span><span class="en">Goal: </span></b><span class="zh">上线只是开始。等自选池跑顺了，我们再用更精细的投放方式、多组对比，看看到底能把活跃拉高多少，同时也一直盯着：限时体验有没有真的少赚钱。</span><span class="en">Launch is just the start. Once the pool runs steady, we'll use finer delivery and multiple comparison groups to see exactly how much it lifts activity, while always watching whether the time-limited trials actually cost us sales.</span></div>
   <div class="grid g2">
     <div class="card">
-      <h3><span class="zh">① A/B 概率投放</span><span class="en">① A/B probability-based delivery</span></h3>
+      <h3><span class="zh">① 按偏好概率投放（A/B）</span><span class="en">① Preference-weighted delivery (A/B)</span></h3>
       <div class="note"><span class="zh">把"每日随机 3 款"升级为<b>按偏好 / 历史的概率化投放</b>，多组灰度对照，验证命中率与活跃提升、找最优权重。</span><span class="en">Upgrade "3 random daily" to <b>preference / history-weighted delivery</b>; multi-group gray controls to validate hit-rate and activity lift, finding optimal weights.</span></div>
     </div>
     <div class="card">
-      <h3><span class="zh">② 多个奖池切片</span><span class="en">② Multiple prize-pool slices</span></h3>
+      <h3><span class="zh">② 拆多个奖池对照</span><span class="en">② Split into multiple pool slices</span></h3>
       <div class="note"><span class="zh">按枪型 / 品质 / 主题拆<b>多个奖池切片</b>做对照，定位"活跃增益最高、蚕食最低"的组合，作为长期入池标准。</span><span class="en">Split into <b>multiple pool slices</b> by gun type / quality / theme; find the combo with highest activity gain and lowest cannibalization as the long-term standard.</span></div>
     </div>
     <div class="card">
-      <h3><span class="zh">③ 活跃提升验证</span><span class="en">③ Activity-lift validation</span></h3>
+      <h3><span class="zh">③ 验证活跃到底涨多少</span><span class="en">③ Measure the activity lift</span></h3>
       <div class="note"><span class="zh">持续观测<b>次日 / 7 / 30 留存、任务完成率、续用率、沉默回流率</b>，量化活跃贡献。</span><span class="en">Track <b>next-day / 7 / 30-day retention, task completion, renewal, dormant comeback</b> to quantify the activity contribution.</span></div>
     </div>
     <div class="card">
-      <h3><span class="zh">④ 商业化侵蚀观测</span><span class="en">④ Monetization-erosion observation</span></h3>
+      <h3><span class="zh">④ 盯着别蚕食正价生意</span><span class="en">④ Watch for cannibalization</span></h3>
       <div class="note"><span class="zh">用 DA 交叉报表「特权用户 × 入池皮肤 × 正价购买额」<b>持续监测蚕食</b>并设阈值告警；越线即收缩入池或降概率。</span><span class="en">Use the DA cross-report (privilege users × pooled skins × full-price purchases) to <b>monitor cannibalization</b> with threshold alerts; if breached, shrink the pool or lower delivery probability.</span></div>
     </div>
   </div>
 
   <!-- 6. Next steps -->
-  <h2><span class="zh">六、下一步行动</span><span class="en">V. Next Steps</span></h2>
+  <h2><span class="zh">六、接下来怎么做</span><span class="en">VI. Next steps</span></h2>
   <ul>
     <li><b><span class="zh">本周：</span><span class="en">This week: </span></b><span class="zh">确认入池清单（10~15 款、2~3 年前经典款，剔除 GO 及已禁用道具）→ 拉 DA 单皮肤切片标定蚕食基线</span><span class="en">Confirm pool list (10–15, 2–3-year-old classics, excluding GO series and banned items) → pull DA per-skin slice to calibrate the cannibalization baseline</span></li>
     <li><b><span class="zh">2 周内：</span><span class="en">Within 2 weeks: </span></b><span class="zh">用研立项（感知价值 + 开通意愿），同步准备灰度方案与 A/B 实验设计</span><span class="en">Initiate research (perceived value + activation willingness), prepare gray-release plan and A/B design in parallel</span></li>
