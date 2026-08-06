@@ -583,14 +583,14 @@ const state = {
 const fortunes = [
   { tag: '上上签', title: '开黑签', text: '新学期的第一局，必有老友应声而来。那些一起熬过的夜、一起守过的包，开学都会回来。', yi: '宜：叫上室友开黑', ji: '忌：深夜一个人单排' },
   { tag: '大吉', title: '五杀签', text: '新学期的你状态拉满，考试、排位、社团三线开花，手感热得像刚出热身图。', yi: '宜：乘胜追击', ji: '忌：半场开香槟' },
-  { tag: '上签', title: '早八签', text: '今天的你会比闹钟先醒。第一排的位置和第一节课的好状态，都是你的。', yi: '宜：赶早八占前排', ji: '忌：踩点冲进教室' },
+  { tag: '上上签', title: '早八签', text: '今天的你会比闹钟先醒。第一排的位置和第一节课的好状态，都是你的。', yi: '宜：赶早八占前排', ji: '忌：踩点冲进教室' },
   { tag: '上签', title: '及格签', text: '平时分就像守包，平时不站位，期末只能干着急。现在开始落位，还来得及。', yi: '宜：按时交作业', ji: '忌：期末突击拜佛' },
-  { tag: '中吉', title: '抢课签', text: '选课就像抢 A 大，手快有手慢无。系统开放那一瞬间，拼的就是反应和预瞄。', yi: '宜：提前收藏课表', ji: '忌：犹豫就会败北' },
+  { tag: '上吉', title: '抢课签', text: '选课就像抢 A 大，手快有手慢无。系统开放那一瞬间，拼的就是反应和预瞄。', yi: '宜：提前收藏课表', ji: '忌：犹豫就会败北' },
   { tag: '中吉', title: '饭搭子签', text: '食堂最后一个靠窗的座位，会留给愿意拼桌的人。新朋友的开场白，往往从一顿饭开始。', yi: '宜：约上饭搭子', ji: '忌：一个人点外卖' },
-  { tag: '小吉', title: '学长签', text: '在社团摊位前多停留一分钟，转角遇到的学长，可能就是你接下来的校友链接。', yi: '宜：主动打个招呼', ji: '忌：社恐突然发作' },
+  { tag: '小吉', title: '同窗签', text: '在社团摊位前多停留一分钟，转角遇到的人，可能就是你接下来四年的校友链接。', yi: '宜：主动打个招呼', ji: '忌：社恐突然发作' },
   { tag: '小吉', title: '队友签', text: '总会遇到一个不报点的队友，也总会遇到一个愿意等你下课再开一局的人。', yi: '宜：珍惜好队友', ji: '忌：压力怪附体' },
   { tag: '吉', title: '经济签', text: '这个月的生活费就像手枪局的经济——省着点起，下半场才有得打。', yi: '宜：理性消费', ji: '忌：月初梭哈全套皮肤' },
-  { tag: '末吉', title: '断线签', text: '偶尔掉线也没关系，重连回来照样能赢。生活卡顿的时候，深呼吸，再进场。', yi: '宜：稳住心态', ji: '忌：摔鼠标（赔不起）' }
+  { tag: '末吉', title: '满血签', text: '偶尔掉线也没关系，重连回来照样满血开打。生活卡顿的时候，深呼吸，再进场。', yi: '宜：稳住心态', ji: '忌：摔鼠标（赔不起）' }
 ];
 
 const schools = [
@@ -652,7 +652,7 @@ function renderFortuneCard() {
 }
 
 function renderAtmosphere() {
-  return `<section class="wish-garden fortune-only" aria-labelledby="wish-title"><div class="wish-side"><span class="wish-label">返校祈愿亭</span><h3 id="wish-title">开学求个签，讨个好彩头</h3><p class="wish-intro">十支开学签，签签有梗。抽一支看看新学期给你准备了什么——轻松一下的小互动，不影响任务进度与奖励。</p><ul class="wish-hints"><li>开黑签 · 五杀签 · 早八签</li><li>抢课签 · 及格签 · 经济签</li><li>饭搭子签 · 学长签 · 队友签 · 断线签</li></ul></div>${renderFortuneCard()}</section>`;
+  return `<section class="wish-garden fortune-only" aria-labelledby="wish-title"><div class="wish-side"><span class="wish-label">返校祈愿亭</span><h3 id="wish-title">开学求个签，讨个好彩头</h3><p class="wish-intro">十支开学签，签签有梗。抽一支看看新学期给你准备了什么——轻松一下的小互动，不影响任务进度与奖励。</p><ul class="wish-hints"><li>开黑签 · 五杀签 · 早八签</li><li>抢课签 · 及格签 · 经济签</li><li>饭搭子签 · 同窗签 · 队友签 · 满血签</li></ul></div>${renderFortuneCard()}</section>`;
 }
 
 function renderCampusGateway() {
